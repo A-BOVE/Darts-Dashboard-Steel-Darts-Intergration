@@ -7,6 +7,9 @@ from streamlit import experimental_rerun as rerun
 
 #def calculate_c(a,b,c):
  #   c =+ 1
+
+def clear_session_state():
+    st.clear()
     
 def main():
     st.title(":dart: Darts")
@@ -70,22 +73,21 @@ def main():
    
             if st.session_state.startscore - st.session_state.b1 == 0: 
                 st.write ("Player 1 has won a leg of Darts!!!")
-                next_leg2 = st.button("Next Leg")
-                if next_leg2:
-                    # Delete all the items in Session state
-                    for key in st.session_state.keys():
+                for key in st.session_state.keys():
                         del st.session_state[key]
-                    st.write("Fill in a new score")
+                                # Delete all the items in Session state
+                next_leg = st.button("Next Leg")
+                if next_leg:
+                    st.experimental_rerun() 
+
             if st.session_state.startscore2 - st.session_state.b2 == 0: 
                 st.write ("Player 2 has won a leg of Darts!!!")
-                next_leg3 = st.button("Next Leg")
-                if next_leg3:
-                    # Delete all the items in Session state
-                    for key in st.session_state.keys():
+                for key in st.session_state.keys():
                         del st.session_state[key]
-                    st.write("Fill in a new score")
-            
-            
+                                # Delete all the items in Session state
+                next_leg = st.button("Next Leg")
+                if next_leg:
+                    st.experimental_rerun() 
 
 
     #Three PLayer Game 
@@ -111,29 +113,34 @@ def main():
   
             if st.session_state.startscore - st.session_state.b1 == 0: 
                 st.write ("Player 1 has won a leg of Darts!!!")
-                next_leg4 = st.button("Next Leg")
-                if next_leg4:
-                    # Delete all the items in Session state
-                    for key in st.session_state.keys():
+                for key in st.session_state.keys():
                         del st.session_state[key]
-                    st.write("Fill in a new score")
+                                # Delete all the items in Session state
+                next_leg = st.button("Next Leg")
+                if next_leg:
+                    st.experimental_rerun() 
+
             if st.session_state.startscore2 - st.session_state.b2 == 0: 
                 st.write ("Player 2 has won a leg of Darts!!!")
-                next_leg5 = st.button("Next Leg")
-                if next_leg5:
-                    # Delete all the items in Session state
-                    for key in st.session_state.keys():
+                for key in st.session_state.keys():
                         del st.session_state[key]
-                    st.write("Fill in a new score")
+                                # Delete all the items in Session state
+                next_leg = st.button("Next Leg")
+                if next_leg:
+                    st.experimental_rerun() 
+                
+
 
             if st.session_state.startscore3 - st.session_state.b3 == 0: 
-                st.write ("Player 2 has won a leg of Darts!!!")
-                next_leg6 = st.button("Next Leg")
-                if next_leg6:
-                    # Delete all the items in Session state
-                    for key in st.session_state.keys():
+                st.write ("Player 3 has won a leg of Darts!!!")
+                for key in st.session_state.keys():
                         del st.session_state[key]
-                    st.write("Fill in a new score")
+                                # Delete all the items in Session state
+                next_leg = st.button("Next Leg")
+                if next_leg:
+                    st.experimental_rerun() 
+
+            
 
        
 if __name__ == '__main__':
