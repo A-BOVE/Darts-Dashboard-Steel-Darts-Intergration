@@ -1,7 +1,7 @@
 #%%
 import streamlit as st
 from streamlit import experimental_rerun as rerun
-
+#Add  counter 
 def clear_session_state():
     st.clear()
     
