@@ -25,7 +25,7 @@ def main():
     
     players = st.radio("select the amount of players",('1 Player Game', '2 Player game', '3 Player game'))
     
-    #1 Player game 
+    #1 Player game LEG COUNTER WORKS 
     if players == '1 Player Game': 
 
         st.write("The player has won", st.session_state.legs_won_1, "Legs")
@@ -49,7 +49,7 @@ def main():
             if st.session_state.startscore - st.session_state.b1 == 0: 
                 st.write ("You have  won a leg of Darts!!!")
                 next_leg = st.button("Next Leg")
-                
+                st.session_state.legs_won_1 +=1 
                 st.write("The player has won", st.session_state.legs_won_1, "Legs")
                 del st.session_state['b1']
                 del st.session_state['startscore']
@@ -84,7 +84,7 @@ def main():
             if st.session_state.startscore - st.session_state.b1 == 0: 
                 st.write ("Player 1 has won a leg of Darts!!!")
                 next_leg = st.button("Next Leg")
-                
+                st.session_state.legs_won_1 +=1 
                 st.write("Player 1 has won", st.session_state.legs_won_1, "Legs")
                 st.write("Player 2 has won", st.session_state.legs_won_2, "Legs")
                 del st.session_state['b1']
@@ -96,10 +96,10 @@ def main():
                         del st.session_state[key]
                                 # Delete all the items in Session state
                                 
-            if st.session_state.startscore - st.session_state.b1 == 0: 
+            if st.session_state.startscore2 - st.session_state.b2 == 0: 
                 st.write ("Player 1 has won a leg of Darts!!!")
                 next_leg = st.button("Next Leg")
-                
+                st.session_state.legs_won_2 +=1 
                 st.write("Player 1 has won", st.session_state.legs_won_1, "Legs")
                 st.write("Player 2 has won", st.session_state.legs_won_2, "Legs")
                 del st.session_state['b1']
@@ -141,7 +141,7 @@ def main():
             if st.session_state.startscore - st.session_state.b1 == 0: 
                 st.write ("Player 1 has won a leg of Darts!!!")
                 next_leg = st.button("Next Leg")
-                
+                st.session_state.legs_won_1 +=1 
                 st.write("Player 1 has won", st.session_state.legs_won_1, "Legs")
                 st.write("Player 2 has won", st.session_state.legs_won_2, "Legs")
                 st.write("Player 3 has won", st.session_state.legs_won_3, "Legs") 
@@ -156,10 +156,10 @@ def main():
                         del st.session_state[key]
                                 # Delete all the items in Session state
                                 
-            if st.session_state.startscore - st.session_state.b1 == 0: 
-                st.write ("Player 1 has won a leg of Darts!!!")
+            if st.session_state.startscore2 - st.session_state.b2 == 0: 
+                st.write ("Player 2 has won a leg of Darts!!!")
                 next_leg = st.button("Next Leg")
-                
+                st.session_state.legs_won_2 +=1 
                 st.write("Player 1 has won", st.session_state.legs_won_1, "Legs")
                 st.write("Player 2 has won", st.session_state.legs_won_2, "Legs")
                 st.write("Player 3 has won", st.session_state.legs_won_3, "Legs") 
@@ -180,9 +180,6 @@ def main():
 
                 
                 next_leg = st.button("Next Leg")
-                st.write("Player 1 has won", st.session_state.legs_won_1, "Legs") 
-                st.write("Player 2 has won", st.session_state.legs_won_2, "Legs") 
-                st.write("Player 3 has won", st.session_state.legs_won_3, "Legs") 
                 st.session_state.legs_won_3 += 1 
 
                 st.write("Player 1 has won", st.session_state.legs_won_1, "Legs") 
